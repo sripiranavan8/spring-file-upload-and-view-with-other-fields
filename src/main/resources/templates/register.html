@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+	<div class="card">
+		<div class="card-body">
+			<form th:method="post" th:action="@{/register}" th:object="${detail}" enctype="multipart/form-data">
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" id="name" name="name" th:field="*{name}" class="form-control" />
+				</div>
+				<div class="form-group">
+					<label for="image">Image</label>
+					<input type="file" id="image" name="image" th:field="*{image}" class="form-control" />
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Save" class="btn btn-info btn-sm form-control" />
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>
